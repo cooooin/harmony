@@ -1,0 +1,44 @@
+[workspace]
+members = [
+    "crates/harmony"
+]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+authors = ["Contributors"]
+repository = "https://github.com/cooooin/harmony"
+description = ""
+keywords = [""]
+
+[workspace.dependencies]
+harmony = { version = "0.1.0", path = "crates/harmony", default-features = false }
+
+tokio = { version = "1", default-features = false }
+
+serde = { version = "1", default-features = false }
+chrono = { version = "0.4", default-features = false }
+dotenvy = { version = "0.15", default-features = false }
+serde_json = { version = "1", default-features = false }
+
+# HTTP
+axum = { version = "0.7", default-features = false }
+axum-server = { version = "0.6", default-features = false }
+
+# Logging
+tracing = { version = "0.1", default-features = false }
+tracing-subscriber = { version = "0.3", default-features = false }
+
+# Database
+rusqlite = { version = "0.32", default-features = false }
+r2d2 = { version = "0.8", default-features = false }
+r2d2_sqlite = { version = "0.25", default-features = false }
+
+ring = { version = "0.17", default-features = false }
+base64 = { version = "0.22", default-features = false }
+validator = { version = "0.19", default-features = false }
+rust_decimal = { version = "1.36", default-features = false }
+
+[workspace.lints.rust]
+unexpected_cfgs = { level = "warn", check-cfg = ['cfg(nightly)'] }
